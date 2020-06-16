@@ -1,11 +1,11 @@
 package com.cqx.tetris.block;
 
 public class Z1Block extends BaseBlock {	
-	//ÏÂ²ã×ó
+	//ä¸‹å±‚å·¦
 	private static int[] argsL1DownLeft = {0,3,4,7};
 	private static int[] argsL2DownLeft = {4,5,6,7};
 	
-	//ÏÂ²ãÓÒ
+	//ä¸‹å±‚å³
 	private static int[] argsL1DownRigth = {1,4,5,8};
 	private static int[] argsL2DownRigth = {4,5,6,7};
 

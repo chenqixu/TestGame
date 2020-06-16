@@ -61,7 +61,7 @@ public class Score {
 	}
 	
 	/**
-	 * 加分
+	 * 鍔犲垎
 	 * */
 	public synchronized void addScore(){
 		score++;
@@ -69,24 +69,24 @@ public class Score {
 	}
 	
 	/**
-	 * 通知标签刷新
+	 * 閫氱煡鏍囩鍒锋柊
 	 * */
 	public synchronized void flush(){
-		// 通知刷新分数
+		// 閫氱煡鍒锋柊鍒嗘暟
 		jlabelscore.setText(""+getScore());
-		// 通知刷新级别
+		// 閫氱煡鍒锋柊绾у埆
 		jlabellevel.setText(""+getLevelDesc());
 	}
 	
 	/**
-	 * 获取分数
+	 * 鑾峰彇鍒嗘暟
 	 * */
 	public synchronized int getScore(){
 		return score;
 	}
 	
 	/**
-	 * 清零
+	 * 娓呴浂
 	 * */
 	public synchronized void cleanScore(){
 		score = 0;

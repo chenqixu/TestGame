@@ -14,8 +14,8 @@ import com.cqx.tetris.block.Z1Block;
 import com.cqx.tetris.block.ZBlock;
 
 /**
- * Ëæ»úÉú³ÉN¸öÄ£¿é
- * Ìá¹©»ñÈ¡µ±Ç°ºÍÏÂÒ»¸öÄ£¿é·½·¨
+ * éšæœºç”ŸæˆNä¸ªæ¨¡å—
+ * æä¾›è·å–å½“å‰å’Œä¸‹ä¸€ä¸ªæ¨¡å—æ–¹æ³•
  * */
 public class BlockQueue {
 	private Random r1 = new Random();

@@ -1,19 +1,19 @@
 package com.cqx.tetris.block;
 
 public class TBlock extends BaseBlock {
-//	//ÉÏ²ã
+//	//ä¸Šå±‚
 //	private static int[] argsL1 = {0,1,2,4};//T
 //	private static int[] argsL3 = {1,3,4,5};
 //	private static int[] argsL2 = {1,3,4,7};
 //	private static int[] argsL4 = {1,4,5,7};
 	
-	//ÏÂ²ã×ó
+	//ä¸‹å±‚å·¦
 	private static int[] argsL1DownLeft = {1,3,4,7};
 	private static int[] argsL2DownLeft = {4,6,7,8};
 	private static int[] argsL3DownLeft = {0,3,4,6};
 	private static int[] argsL4DownLeft = {3,4,5,7};
 	
-	//ÏÂ²ãÓÒ
+	//ä¸‹å±‚å³
 	private static int[] argsL1DownRigth = {2,4,5,8};
 	private static int[] argsL2DownRigth = {4,6,7,8};
 	private static int[] argsL3DownRigth = {1,4,5,7};

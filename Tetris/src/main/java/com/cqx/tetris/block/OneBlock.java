@@ -1,10 +1,10 @@
 package com.cqx.tetris.block;
 
 public class OneBlock extends BaseBlock {
-	//ÏÂ²ã×ó
-	private static int[] argsL1DownLeft = {0,1,2,3};//4ĞĞ1ÁĞ
-	//ÏÂ²ãÓÒ
-	private static int[] argsL1DownRigth = {0,1,2,3};//1ĞĞ4ÁĞ
+	//ä¸‹å±‚å·¦
+	private static int[] argsL1DownLeft = {0,1,2,3};//4è¡Œ1åˆ—
+	//ä¸‹å±‚å³
+	private static int[] argsL1DownRigth = {0,1,2,3};//1è¡Œ4åˆ—
 	private boolean changeflag = false;
 	
 	public OneBlock(){
@@ -42,7 +42,7 @@ public class OneBlock extends BaseBlock {
 	public int[] getPanelIndexs(int row_index, int col_index, int rows, int cols){
 //		if(changeflag && isRight())col_index=col_index-3;
 //		if(limitnum==1)col_index=col_index-3;
-//		limitnum = 0;//ÖØÖÃ±êÖ¾Î»£¬ÓÒ±ä³É×ó²ÅÓĞ±êÖ¾Î»
+//		limitnum = 0;//é‡ç½®æ ‡å¿—ä½ï¼Œå³å˜æˆå·¦æ‰æœ‰æ ‡å¿—ä½
 		return getBasePanelIndexs(row_index, col_index, rows, cols);
 	}
 

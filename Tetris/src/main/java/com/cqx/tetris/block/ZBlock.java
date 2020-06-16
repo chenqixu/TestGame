@@ -4,11 +4,11 @@ public class ZBlock extends BaseBlock {
 //	private static int[] argsL1 = {0,3,4,7};//Z
 //	private static int[] argsL2 = {0,1,2,4};
 	
-	//ÏÂ²ã×ó
+	//ä¸‹å±‚å·¦
 	private static int[] argsL1DownLeft = {1,3,4,6};//Z
 	private static int[] argsL2DownLeft = {3,4,7,8};
 	
-	//ÏÂ²ãÓÒ
+	//ä¸‹å±‚å³
 	private static int[] argsL1DownRigth = {2,4,5,7};//Z
 	private static int[] argsL2DownRigth = {3,4,7,8};
 

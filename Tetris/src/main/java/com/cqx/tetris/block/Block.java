@@ -8,20 +8,20 @@ import javax.swing.JButton;
 public class Block extends JButton{
 	private static final long serialVersionUID = 1L;
 	private boolean status = false;
-	private int rownum = 0;//ĞĞºÅ
-	private int colnum = 0;//ÁĞºÅ
-	private int listindex = 0;//listÖĞµÄĞòºÅ
+	private int rownum = 0;//è¡Œå·
+	private int colnum = 0;//åˆ—å·
+	private int listindex = 0;//listä¸­çš„åºå·
 
 	public Block(){
 		super();
-		setFocusable(false);//ÉèÖÃ½¹µãÊ§Ğ§
+		setFocusable(false);//è®¾ç½®ç„¦ç‚¹å¤±æ•ˆ
 		setBackground(Color.WHITE);
 		setPreferredSize(new Dimension(30, 30));
 	}
 	
 	public Block(int _rownum, int _colnum, int _listindex){
 		super();
-		setFocusable(false);//ÉèÖÃ½¹µãÊ§Ğ§
+		setFocusable(false);//è®¾ç½®ç„¦ç‚¹å¤±æ•ˆ
 		setBackground(Color.WHITE);
 		setPreferredSize(new Dimension(30, 30));
 		rownum = _rownum;
@@ -30,7 +30,7 @@ public class Block extends JButton{
 	}
 	
 	/**
-	 * ³õÊ¼»¯¿é
+	 * åˆå§‹åŒ–å—
 	 * */
 	public void init(){
 		status = true;
@@ -38,7 +38,7 @@ public class Block extends JButton{
 	}
 	
 	/**
-	 * ÇåÀí¿é
+	 * æ¸…ç†å—
 	 * */
 	public void clean(){
 		status = false;
@@ -46,28 +46,28 @@ public class Block extends JButton{
 	}
 	
 	/**
-	 * ¿éÊÇ·ñ»î¶¯
+	 * å—æ˜¯å¦æ´»åŠ¨
 	 * */
 	public boolean isActive(){
 		return status;
 	}
 
 	/**
-	 * »ñµÃĞĞºÅ
+	 * è·å¾—è¡Œå·
 	 * */
 	public int getRownum() {
 		return rownum;
 	}
 
 	/**
-	 * »ñµÃÁĞºÅ
+	 * è·å¾—åˆ—å·
 	 * */
 	public int getColnum() {
 		return colnum;
 	}
 
 	/**
-	 * »ñµÃÔÚListÖĞµÄË÷ÒıÎ»ÖÃ
+	 * è·å¾—åœ¨Listä¸­çš„ç´¢å¼•ä½ç½®
 	 * */
 	public int getListindex() {
 		return listindex;

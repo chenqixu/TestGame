@@ -6,13 +6,13 @@ public class LBlock extends BaseBlock {
 //	private static int[] argsL3 = {1,2,5,8};
 //	private static int[] argsL4 = {0,1,2,3};
 	
-	//ÏÂ²ã×ó
+	//ä¸‹å±‚å·¦
 	private static int[] argsL1DownLeft = {0,3,6,7};//L
 	private static int[] argsL2DownLeft = {5,6,7,8};
 	private static int[] argsL3DownLeft = {0,1,4,7};
 	private static int[] argsL4DownLeft = {3,4,5,6};
 	
-	//ÏÂ²ãÓÒ
+	//ä¸‹å±‚å³
 	private static int[] argsL1DownRigth = {1,4,7,8};//L
 	private static int[] argsL2DownRigth = {5,6,7,8};
 	private static int[] argsL3DownRigth = {1,2,5,8};

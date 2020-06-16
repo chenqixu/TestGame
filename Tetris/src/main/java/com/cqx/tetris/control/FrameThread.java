@@ -1,7 +1,7 @@
 package com.cqx.tetris.control;
 
 /**
- * Ñ­»·BlockThread
+ * å¾ªç¯BlockThread
  * */
 public class FrameThread implements Runnable {
 	private Status status = new Status();
@@ -30,7 +30,7 @@ public class FrameThread implements Runnable {
 	}
 
 	/**
-	 * Æô¶¯BlockThreadÏß³Ì£ºÄ£¿é×Ô¶¯ÍùÏÂ£¬ÒÔ¼°Çå³ıºÍ¼Æ·Ö
+	 * å¯åŠ¨BlockThreadçº¿ç¨‹ï¼šæ¨¡å—è‡ªåŠ¨å¾€ä¸‹ï¼Œä»¥åŠæ¸…é™¤å’Œè®¡åˆ†
 	 * */
 	public void start(){
 		setStatusTrue();

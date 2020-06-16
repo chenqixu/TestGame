@@ -5,7 +5,7 @@ import com.cqx.tetris.panel.PanelFactory;
 import com.cqx.tetris.panel.PanelNextFactory;
 
 /**
- * Ïß³Ì¹¤³§£¬ÓÃÓÚÆô¶¯FrameThread
+ * çº¿ç¨‹å·¥å‚ï¼Œç”¨äºå¯åŠ¨FrameThread
  * */
 public class ThreadFactory {
 	private static ThreadFactory btf = new ThreadFactory();
@@ -33,39 +33,39 @@ public class ThreadFactory {
 	}
 	
 	/**
-	 * Æô¶¯
+	 * å¯åŠ¨
 	 * */
 	public synchronized void start(){
 		if(bc!=null){
 			if(bt==null)bt = new FrameThread(bc);
-			bc.cleanAll();//Çå¿ÕÃæ°å
-			bt.start(); //Æô¶¯BlockThreadÏß³Ì£ºÄ£¿é×Ô¶¯ÍùÏÂ£¬ÒÔ¼°Çå³ıºÍ¼Æ·Ö
+			bc.cleanAll();//æ¸…ç©ºé¢æ¿
+			bt.start(); //å¯åŠ¨BlockThreadçº¿ç¨‹ï¼šæ¨¡å—è‡ªåŠ¨å¾€ä¸‹ï¼Œä»¥åŠæ¸…é™¤å’Œè®¡åˆ†
 			t = new Thread(bt);
-			t.start(); //Æô¶¯FrameThreadÏß³Ì£ºÑ­»·BlockThread
+			t.start(); //å¯åŠ¨FrameThreadçº¿ç¨‹ï¼šå¾ªç¯BlockThread
 		}
 	}
 	
 	/**
-	 * Í£Ö¹
+	 * åœæ­¢
 	 * */
 	public synchronized void stop(){
-		//Èç¹ûbc²»Îª¿Õ
+		//å¦‚æœbcä¸ä¸ºç©º
 		if(bc!=null){
-			//Çå¿ÕPanelFactory
+			//æ¸…ç©ºPanelFactory
 			System.out.println("clean PanelFactory");
 			bc.cleanAll();
-			//Çå¿Õ·ÖÊı
+			//æ¸…ç©ºåˆ†æ•°
 			System.out.println("clean score");
 			Score.getInstance().cleanScore();
-			//Í¨Öª±êÇ©Ë¢ĞÂ
+			//é€šçŸ¥æ ‡ç­¾åˆ·æ–°
 			System.out.println("notice label flush");
 			Score.getInstance().flush();
-			//Çå¿ÕPanelNextFactory
+			//æ¸…ç©ºPanelNextFactory
 			System.out.println("clean PanelNextFactory");
 			PanelNextFactory.getInstance().getBlockControl().cleanAll();
-			//ÏÔÊ¾Game Over»­Ãæ
+			//æ˜¾ç¤ºGame Overç”»é¢
 			PanelFactory.getInstance().getBlockControl().initBlockSome(BlockGameOver.getGameover2Array());
-			//Í£Ö¹FrameThread
+			//åœæ­¢FrameThread
 			System.out.println("stop FrameThread");
 			bt.stop();
 		}

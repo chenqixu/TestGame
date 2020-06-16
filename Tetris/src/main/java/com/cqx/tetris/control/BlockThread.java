@@ -13,7 +13,7 @@ package com.cqx.tetris.control;
 import com.cqx.tetris.panel.PanelNextFactory;
 
 /**
- * Ä£¿é×Ô¶¯ÍùÏÂ£¬ÒÔ¼°Çå³ıºÍ¼Æ·Ö
+ * æ¨¡å—è‡ªåŠ¨å¾€ä¸‹ï¼Œä»¥åŠæ¸…é™¤å’Œè®¡åˆ†
  * */
 public class BlockThread implements Runnable {
 	private BlockControl bc;
@@ -26,7 +26,7 @@ public class BlockThread implements Runnable {
 //		bc.initBaseBlock(new OneBlock(), 0, 4);
 //		bc.initBaseBlock(new ZBlock(), 0, 4);
 //		bc.initBaseBlock(random(), 0, 4);
-		//´Ó¶ÓÁĞÖĞ»ñÈ¡µ±Ç°
+		//ä»é˜Ÿåˆ—ä¸­è·å–å½“å‰
 		bc.initBaseBlock(BlockQueue.getInstance().getNow(), 0, bc.getHalfCols());
 		bs = new BlockStep();
 		bc.setBs(bs);
@@ -66,7 +66,7 @@ public class BlockThread implements Runnable {
 	}
 
 	public void run() {
-		//ÏÂÒ»¸öÄ£¿éÉèÖÃ
+		//ä¸‹ä¸€ä¸ªæ¨¡å—è®¾ç½®
 		PanelNextFactory.getInstance().getBlockControl().cleanAll();
 		PanelNextFactory.getInstance().getBlockControl().initBaseBlock(BlockQueue.getInstance().getNext()
 				, 0, 1);
@@ -74,23 +74,23 @@ public class BlockThread implements Runnable {
 			try {
 				status = true;
 				Thread.sleep(Score.getInstance().getLevel());
-				//ÍùÏÂÒÆ¶¯
+				//å¾€ä¸‹ç§»åŠ¨
 				bc.downBaseBlock();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		//Çå³ıÍê³ÉµÄĞĞ£¬Ã¿ĞĞ¼Ç1·Ö
+		//æ¸…é™¤å®Œæˆçš„è¡Œï¼Œæ¯è¡Œè®°1åˆ†
 		bc.cleanCompleteBlock();
 		status = false;
 		//Game Over
 		if(bs.getStep_num()==0){
-			//Í£Ö¹ThreadFactory
+			//åœæ­¢ThreadFactory
 			ThreadFactory.getInstance().stop();			
 		}else{
-			//¶ÓÁĞÏÂÒ»¸ö
+			//é˜Ÿåˆ—ä¸‹ä¸€ä¸ª
 			BlockQueue.getInstance().next();
-			//¼Æ²½Æ÷Çå¿Õ
+			//è®¡æ­¥å™¨æ¸…ç©º
 			bs.clean();
 		}
 	}
