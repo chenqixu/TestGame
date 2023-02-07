@@ -4,6 +4,7 @@
     <artifactId>TestGame</artifactId>
     <modules>
         <module>Tetris</module>
+        <module>CoasterRider</module>
     </modules>
     <groupId>com.cqx</groupId>
     <version>1.0.0</version>
