@@ -1,5 +1,6 @@
 package com.cqx.coasterrider;
 
+import com.cqx.coasterrider.util.ImageUtil;
 import com.cqx.common.utils.system.SleepUtil;
 import com.cqx.common.utils.thread.ThreadTool;
 import org.junit.After;
@@ -37,7 +38,7 @@ public class TaxiAdvertisingScreenTest {
 
     @Test
     public void getPicArrayData() {
-        int[][] imgArray = TaxiAdvertisingScreen.getPicArrayData(path);
+        int[][] imgArray = ImageUtil.getPicArrayData(path);
         if (imgArray.length > 0) {
             System.out.println(String.format("width: %s, height: %s", imgArray[0].length, imgArray.length));
         }
@@ -51,7 +52,7 @@ public class TaxiAdvertisingScreenTest {
 
     @Test
     public void convertTo2DWithoutUsingGetRGB() throws IOException {
-        int[][] imgArray = TaxiAdvertisingScreen.convertTo2DWithoutUsingGetRGB(path);
+        int[][] imgArray = ImageUtil.convertTo2DWithoutUsingGetRGB(path);
         if (imgArray.length > 0) {
             System.out.println(String.format("width: %s, height: %s", imgArray[0].length, imgArray.length));
         }
