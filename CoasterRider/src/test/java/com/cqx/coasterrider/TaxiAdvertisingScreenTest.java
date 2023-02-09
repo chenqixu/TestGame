@@ -38,13 +38,14 @@ public class TaxiAdvertisingScreenTest {
 
     @Test
     public void getPicArrayData() {
-        int[][] imgArray = ImageUtil.getPicArrayData(path);
+        // 图是反的
+        int[][] imgArray = ImageUtil.getPicArrayData("d:\\tmp\\data\\player\\1.jpg");
         if (imgArray.length > 0) {
             System.out.println(String.format("width: %s, height: %s", imgArray[0].length, imgArray.length));
         }
         for (int[] _imgArray : imgArray) {
             for (int _img : _imgArray) {
-                System.out.print(String.format("%s ", _img != 0 ? 1 : 0));
+                System.out.print(_img);
             }
             System.out.println();
         }
@@ -52,13 +53,13 @@ public class TaxiAdvertisingScreenTest {
 
     @Test
     public void convertTo2DWithoutUsingGetRGB() throws IOException {
-        int[][] imgArray = ImageUtil.convertTo2DWithoutUsingGetRGB(path);
+        int[][] imgArray = ImageUtil.convertTo2DWithoutUsingGetRGB("d:\\tmp\\data\\player\\1.jpg");
         if (imgArray.length > 0) {
             System.out.println(String.format("width: %s, height: %s", imgArray[0].length, imgArray.length));
         }
         for (int[] _imgArray : imgArray) {
             for (int _img : _imgArray) {
-                System.out.print(String.format("%s ", _img != 0 ? 1 : 0));
+                System.out.print(_img);
             }
             System.out.println();
         }

@@ -17,9 +17,23 @@ import java.util.concurrent.BlockingDeque;
  * @author chenqixu
  */
 public abstract class AbstractScreen extends JFrame {
+    /**
+     * 从左到右
+     */
     public static final String FromLeftToRight = "FromLeftToRight";
+    /**
+     * 从右到左
+     */
     public static final String FromRightToLeft = "FromRightToLeft";
+    /**
+     * 替换
+     */
+    public static final String Replace = "Replace";
+
     protected final Logger logger = LoggerFactory.getLogger(getClass());
+    /**
+     * 按钮，模拟屏幕像素点
+     */
     protected List<List<JButton>> jbList;
     /**
      * 排
@@ -29,15 +43,30 @@ public abstract class AbstractScreen extends JFrame {
      * 列
      */
     protected int cols = 128;
+    /**
+     * 按钮边长
+     */
     protected int jbLen = 12;
+    /**
+     * 屏幕位置x
+     */
     protected int LocationX;
+    /**
+     * 屏幕位置y
+     */
     protected int LocationY;
+    /**
+     * 窗口标题
+     */
     protected String title;
     protected LimitedQueue<Integer> limitedQueue;
     /**
      * 空列
      */
     protected List<Integer> spaceList;
+    /**
+     * 内容移动类型
+     */
     protected String type;
     /**
      * 移动速度[1000-0]<br>
@@ -85,7 +114,10 @@ public abstract class AbstractScreen extends JFrame {
         for (int i = 0; i < cols * rows; i++) {
             List<JButton> rowList = jbList.get(i % cols);
             JButton jb = new JButton();
+            // 大小
             jb.setPreferredSize(new Dimension(jbLen, jbLen));
+            // 无边框
+            jb.setBorder(null);
             rowList.add(jb);
             panelContent.add(jb);
         }
@@ -124,9 +156,8 @@ public abstract class AbstractScreen extends JFrame {
                 jButtonList.get(j).setBackground(new Color(datas.get(i).get(j)));
             }
         }
-        // 解决刷新的残影问题
-        setVisible(true);
-        update(getGraphics());
+        // 重新绘制--解决刷新的残影问题
+        repaint();
     }
 
     /**
@@ -147,6 +178,19 @@ public abstract class AbstractScreen extends JFrame {
                     // 加到队尾
                     if (last != null) deque.offerLast(last);
                     break;
+                case Replace:
+                    int pollCnt = 0;
+                    while (pollCnt < cols) {
+                        pollCnt++;
+                        last = deque.poll();
+                        if (last != null) {
+                            limitedQueue.add(last);
+                            deque.offer(last);
+                        }
+                    }
+                    paint();
+                    SleepUtil.sleepMilliSecond(speed);
+                    continue;
                 default:
                     break;
             }
