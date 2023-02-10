@@ -11,7 +11,7 @@ import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
 /**
- * 大屏播放器
+ * 大屏播放器--点阵方式
  *
  * @author chenqixu
  */

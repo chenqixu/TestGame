@@ -2,6 +2,7 @@ package com.cqx.coasterrider;
 
 import com.cqx.coasterrider.util.FontUtil;
 import com.cqx.coasterrider.util.ImageUtil;
+import com.cqx.common.utils.file.FileUtil;
 
 import java.awt.*;
 import java.io.File;
@@ -44,8 +45,7 @@ public class TaxiAdvertisingScreen extends AbstractScreen {
      * @param size
      */
     public void buildFont(String fontPath, String dataStr, int size) {
-        File file = new File(fontPath);
-        if (!file.exists() || !file.isDirectory()) {
+        if (!FileUtil.isDirectory(fontPath)) {
             throw new NullPointerException(String.format("[路径]%s不存在！", fontPath));
         }
         if (!fontPath.endsWith(File.separator)) {
