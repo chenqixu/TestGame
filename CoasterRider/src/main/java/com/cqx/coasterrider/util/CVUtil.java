@@ -44,7 +44,7 @@ public class CVUtil {
      */
     public static void fetchFrame(String videofile, String savePath, int frameNumber
             , boolean isScale, int ScaleWidth) throws Exception {
-        if (!FileUtil.isDirectory(videofile)) {
+        if (!FileUtil.isFile(videofile)) {
             throw new NullPointerException(String.format("[源视频文件]%s不存在！", videofile));
         }
         if (!FileUtil.isDirectory(savePath)) {

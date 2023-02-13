@@ -41,7 +41,7 @@ public class PlayerPanel extends JFrame {
     }
 
     public static void main(String[] args) {
-        new PlayerPanel("d:\\tmp\\data\\player\\", 29, 200, 112);
+        new PlayerPanel("d:\\tmp\\data\\player\\", 29, 640, 360);
     }
 
     private Player buildPlayer() {
