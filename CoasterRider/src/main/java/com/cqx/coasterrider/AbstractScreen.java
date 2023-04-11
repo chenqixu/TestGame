@@ -157,7 +157,7 @@ public abstract class AbstractScreen extends JFrame {
             }
         }
         // 重新绘制--解决刷新的残影问题
-        repaint();
+//        repaint();
     }
 
     /**

@@ -34,7 +34,7 @@ public class Demo extends JFrame implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-
+//        System.out.println("[keyTyped]" + e.getKeyChar());
     }
 
     @Override
@@ -47,7 +47,6 @@ public class Demo extends JFrame implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
 //        System.out.println("[keyReleased]" + e.getKeyChar());
-
     }
 
     /**
@@ -59,7 +58,7 @@ public class Demo extends JFrame implements KeyListener {
      * 向上，坐标轴为x+40，y-50
      * 向下，坐标轴为x+40，y+长
      */
-    class DemoPanel extends Panel {
+    class DemoPanel extends JPanel {
         int x = 0;
         int y = 0;
         int width = 100;
